@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,9 @@ import { AboutComponent } from './about/about.component';
 import { CpbComponent } from './concepts/components/cpb/cpb.component';
 import { CebComponent } from './concepts/components/ceb/ceb.component';
 import { ColorizerDirective } from './concepts/directives/colorizer.directive';
+import { AddContactComponent } from './contacts/components/add-contact/add-contact.component';
+import { ContactDetailsComponent } from './contacts/components/contact-details/contact-details.component';
+import { DemoIfDirective } from './concepts/directives/demo-if.directive';
 
 // Main Switching Box
 @NgModule({
@@ -28,12 +31,16 @@ import { ColorizerDirective } from './concepts/directives/colorizer.directive';
     AboutComponent,
     CpbComponent,
     CebComponent,
-    ColorizerDirective
+    ColorizerDirective,
+    AddContactComponent,
+    ContactDetailsComponent,
+    DemoIfDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [ AppComponent ] // AppModule should bootstrap AppComponent
