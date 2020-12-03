@@ -68,22 +68,22 @@
         <div class="tab-pane fade" id="directives-tab" role="tabpanel" aria-labelledby="directives-tab">
             <h2>Directives</h2>
             <pre>
-      Directives
-      ---
-        Special Instructions to the DOM
+        Directives
+        ---
+          Special Instructions to the DOM
 
-        1. Attribute Directives
-            ngClass, ngStyle, routerLink, routerLinkActive
+          1. Attribute Directives
+              ngClass, ngStyle, routerLink, routerLinkActive
 
-        2. Structural Directives
-            Will make impact in structural layer.
-            *ngIf, *ngFor, ngSwitch
+          2. Structural Directives
+              Will make impact in structural layer.
+              *ngIf, *ngFor, ngSwitch
 
-        3. Custom Attribute Directives
+          3. Custom Attribute Directives
 
-        4. Custom Structural Directives
+          4. Custom Structural Directives
 
-    </pre>
+      </pre>
 
             <h4>*ngIf</h4>
 
@@ -102,6 +102,7 @@
             <ul>
                 <li *ngFor="let skill of skillList ; index as i;">{{i+1}} {{skill}}</li>
             </ul>
+
             <!-- todo: find index in the above *ngFor -->
 
             <!-- todo: ngSwitch -->
@@ -115,15 +116,21 @@
                 <div *ngSwitchCase="'CSS'">CSS is Selected</div>
                 <div *ngSwitchDefault>Default Option</div>
             </div>
+
             <h4>Custom Attribute Directive</h4>
+            <p>ng g d concepts/directives/colorizer</p>
             <div appColorizer>
                 Testing in colorizer directive
                 <button class="btn btn-danger">Change Bg Color</button>
             </div>
+
             <h4>Custom Structural Directive</h4>
+            <p>ng g d concepts/directives/demo-if</p>
+
             <div *appDemoIf="">
                 <p>Authenticated</p>
             </div>
+
         </div>
 
     </div>

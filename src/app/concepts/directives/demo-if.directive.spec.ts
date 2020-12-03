@@ -6,5 +6,3 @@ describe('DemoIfDirective', () => {
     expect(directive).toBeTruthy();
   });
 });
-
-

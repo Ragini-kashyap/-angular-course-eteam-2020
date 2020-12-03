@@ -5,15 +5,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   template: `
     <div class="text-center">
       <hr>
-      <div class="nav-item footer">
+      <div class="nav-item">
           <a class="nav-link" href="#">Back to Top</a>
         </div>
       <app-menu>
-        <!-- <li class="nav-item footer">
-          <a class="nav-link" href="#">Back to Top</a>
-        </li> -->
       </app-menu>
-      <p class='redText'>Copyright 2020 | RaginiID</p>
+      <p class='redText'>Copyright 2020 | Ragini</p>
       <p class='happyText'>Happily developed during a training in Nov 2020</p>
     </div>
   `,

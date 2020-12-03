@@ -26,7 +26,7 @@ export class CebComponent implements OnInit {
     event.target.innerText = 'Loading Profile...';
     // mocking an ajax call
     setTimeout( () => {
-      console.log('Data sent to parent comp is: Arun');
+      console.log('Data sent to parent comp is: Ragini');
       event.target.innerText = 'Loaded Profile...';
       // Step 2: Emit that custom event thru program
       this.profileLoaded.emit(this.personName); // Step 3: Along with the emitted event, Send data to the parent comp

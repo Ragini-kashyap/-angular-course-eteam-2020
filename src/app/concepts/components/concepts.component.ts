@@ -20,14 +20,10 @@ export class ConceptsComponent implements OnInit, AfterViewInit {
 
   // property binding
   averageExp = 2;
-  // *ngSwitch
-  name: string;
-  val: number;
-  item: any;
 
   // for ngStyle
   myStyles: any = {
-    backgroundColor: 'yellow',
+    backgroundColor: 'skyblue',
     color: 'black'
   };
 
@@ -48,11 +44,8 @@ export class ConceptsComponent implements OnInit, AfterViewInit {
   skillList: string[] = [
     'HTML', 'CSS', 'JS'
   ];
-  // *ngSwitch related
-
-    items = [{name: 'HTML'}, {name: 'CSS'}, {name: 'JS'}];
-    selectedValue = 'HTML';
-
+  items = [{name: 'HTML'}, {name: 'CSS'}, {name: 'JS'}];
+  selectedValue = 'HTML';
   constructor() {
     console.log('Inside Constructor');
   }
@@ -68,7 +61,7 @@ export class ConceptsComponent implements OnInit, AfterViewInit {
   }
 
   // event binding related
-  clickMeHandler(event): void {
+  clickMeHandler(event: any): void {
     console.log(event);
     event.target.innerText = 'Clicked';
     event.target.disabled = true;

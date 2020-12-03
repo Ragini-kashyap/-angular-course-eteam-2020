@@ -5,9 +5,8 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 @Directive({
   selector: '[appColorizer]'
 })
-export class ColorizerDirective {
-
-  constructor( private elRef: ElementRef, private renderer: Renderer2 ) { // dependency injection
+export class ColorizerDirective{
+    constructor( private elRef: ElementRef, private renderer: Renderer2 ) { // dependency injection
     console.log(`Inside Constructor of ColorizerDirective`);
     console.log(this.elRef.nativeElement);
 
@@ -18,6 +17,7 @@ export class ColorizerDirective {
 
     this.renderer.setStyle(el, 'background-color', 'yellow');
     this.renderer.setStyle(el, 'color', 'blue');
+    this.renderer.setStyle(el, 'height', '100px');
 
     // todo: increase the height of this div by using setStyle
     // todo: create a <p> element and have a text 'Success' inside.
@@ -28,11 +28,10 @@ export class ColorizerDirective {
     this.renderer.appendChild(el, p);
 
   }
+
   @HostListener('click', ['$event'])
   onClickHandler(evt): void{
     this.renderer.setStyle(evt.target, 'background-color', 'green');
   }
 
 }
-
-

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Contact } from '../../models/contact';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-details',
@@ -8,9 +11,56 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactDetailsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  contactData: Contact;
+  duplicateContactData: Contact;
+  isUpdated: boolean;
+  isDeleted: boolean;
+  constructor(private contactService: ContactService, private route: ActivatedRoute, private router: Router) {
+    console.log('Inside constructor');
   }
 
+
+  ngOnInit(): void {
+    console.log('Inside ngOnInit');
+    // todo: Read URL Parameter in Angular
+    const contactId = this.route.snapshot.paramMap.get('id');
+    this.contactService.getContactById(contactId)
+      .subscribe((res: Contact) => {
+        console.log(res);
+        this.contactData = res;
+      });
+  }
+
+  editModalOpenHandler(): void {
+    this.duplicateContactData = JSON.parse(JSON.stringify(this.contactData));
+  }
+
+  deleteModalOpenHandler(): void {
+    this.duplicateContactData = JSON.parse(JSON.stringify(this.contactData));
+  }
+  updateHandler(): void {
+    console.log(this.duplicateContactData);
+
+    this.contactService.updateContact(this.duplicateContactData)
+      .subscribe((res: Contact) => {
+        console.log(res);
+        if (res && res.id) {
+          this.isUpdated = true;
+          this.contactData = res;
+        }
+      });
+
+  }
+  deleteHandler(): void {
+    console.log(this.duplicateContactData);
+    console.log(' deleteContact');
+    this.contactService.deleteContact(this.duplicateContactData)
+      .subscribe((res: Contact) => {
+        console.log(res);
+        if (res && res.id) {
+          this.isDeleted = true;
+          this.contactData = res;
+        }
+      });
+  }
 }

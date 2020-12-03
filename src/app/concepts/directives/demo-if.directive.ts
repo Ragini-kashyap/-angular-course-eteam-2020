@@ -1,9 +1,9 @@
-import { Directive, TemplateRef, ViewContainerRef } from '@angular/core'; // (note:- i have to read once again)
+import { Directive, TemplateRef, ViewContainerRef } from '@angular/core';
+
 @Directive({
   selector: '[appDemoIf]'
 })
 export class DemoIfDirective {
-
 
   constructor( private viewContainerRef: ViewContainerRef, private templateRef: TemplateRef<object> ) {
     console.log(this.viewContainerRef); // div
@@ -21,5 +21,3 @@ export class DemoIfDirective {
   }
 
 }
-
-
